@@ -1,0 +1,278 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F841D43F14CB208D000511FE /* NSManagedObjectContext+IVGUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = F841D43B14CB208D000511FE /* NSManagedObjectContext+IVGUtils.h */; };
+		F841D44014CB208D000511FE /* NSManagedObjectContext+IVGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F841D43C14CB208D000511FE /* NSManagedObjectContext+IVGUtils.m */; };
+		F89C641212E93A2A00563E7B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		F89C641312E93A2F00563E7B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		F89C641412E93A3400563E7B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		00CDDE300F7703B40089C60E /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F841D43B14CB208D000511FE /* NSManagedObjectContext+IVGUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+IVGUtils.h"; sourceTree = "<group>"; };
+		F841D43C14CB208D000511FE /* NSManagedObjectContext+IVGUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+IVGUtils.m"; sourceTree = "<group>"; };
+		F857ED3416C09477008851A2 /* IVGCoreDataUtils.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = IVGCoreDataUtils.podspec; sourceTree = "<group>"; };
+		F857ED3516C0952D008851A2 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		F857ED3616C095C8008851A2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		F89C62AA12E9364100563E7B /* libIVGCoreDataUtilsLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libIVGCoreDataUtilsLib.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8B3658A1335518F00878CB2 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		F8E05E6012E676A3008C09E5 /* RunTests.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = RunTests.sh; sourceTree = "<group>"; };
+		F8E0602312E6822D008C09E5 /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libOCMock.a; sourceTree = "<group>"; };
+		F8E0602712E68242008C09E5 /* GHUnitIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GHUnitIOS.framework; sourceTree = "<group>"; };
+		F8E0604B12E68261008C09E5 /* OCMock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OCMock.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F89C62A812E9364100563E7B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F89C641212E93A2A00563E7B /* UIKit.framework in Frameworks */,
+				F89C641312E93A2F00563E7B /* Foundation.framework in Frameworks */,
+				F89C641412E93A3400563E7B /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F89C62AA12E9364100563E7B /* libIVGCoreDataUtilsLib.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				F857ED3716C095D5008851A2 /* info */,
+				F89C62A312E935C300563E7B /* LibClasses */,
+				F8E05E5F12E67682008C09E5 /* SharedOtherSources */,
+				F8E05FF512E681E1008C09E5 /* Libraries */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = CustomTemplate;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				F8B3658A1335518F00878CB2 /* CoreData.framework */,
+				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F857ED3716C095D5008851A2 /* info */ = {
+			isa = PBXGroup;
+			children = (
+				F857ED3616C095C8008851A2 /* README.md */,
+				F857ED3416C09477008851A2 /* IVGCoreDataUtils.podspec */,
+				F857ED3516C0952D008851A2 /* LICENSE */,
+			);
+			name = info;
+			sourceTree = "<group>";
+		};
+		F89C62A312E935C300563E7B /* LibClasses */ = {
+			isa = PBXGroup;
+			children = (
+				F841D43B14CB208D000511FE /* NSManagedObjectContext+IVGUtils.h */,
+				F841D43C14CB208D000511FE /* NSManagedObjectContext+IVGUtils.m */,
+			);
+			path = LibClasses;
+			sourceTree = "<group>";
+		};
+		F8E05E5F12E67682008C09E5 /* SharedOtherSources */ = {
+			isa = PBXGroup;
+			children = (
+				F8E05E6012E676A3008C09E5 /* RunTests.sh */,
+				00CDDE300F7703B40089C60E /* Makefile */,
+			);
+			name = SharedOtherSources;
+			sourceTree = "<group>";
+		};
+		F8E05FF512E681E1008C09E5 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				F8E0602312E6822D008C09E5 /* libOCMock.a */,
+				F8E0604B12E68261008C09E5 /* OCMock.framework */,
+				F8E0602712E68242008C09E5 /* GHUnitIOS.framework */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		F89C62A612E9364100563E7B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F841D43F14CB208D000511FE /* NSManagedObjectContext+IVGUtils.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		F89C62A912E9364100563E7B /* IVGCoreDataUtilsLib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F89C62B612E9365C00563E7B /* Build configuration list for PBXNativeTarget "IVGCoreDataUtilsLib" */;
+			buildPhases = (
+				F89C62A612E9364100563E7B /* Headers */,
+				F89C62A712E9364100563E7B /* Sources */,
+				F89C62A812E9364100563E7B /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IVGCoreDataUtilsLib;
+			productName = EmptyBaseLib;
+			productReference = F89C62AA12E9364100563E7B /* libIVGCoreDataUtilsLib.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Ivy Gulch, LLC";
+			};
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "IVGCoreDataUtils" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F89C62A912E9364100563E7B /* IVGCoreDataUtilsLib */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F89C62A712E9364100563E7B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F841D44014CB208D000511FE /* NSManagedObjectContext+IVGUtils.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					arm6,
+					"$(ARCHS_STANDARD_32_BIT)",
+				);
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Douglas Sjoquist (27AJJ3WTY6)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = NO;
+				PROVISIONING_PROFILE = "61BD9747-A664-4924-BAD5-0E7C3585C1CF";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					arm6,
+					"$(ARCHS_STANDARD_32_BIT)",
+				);
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Douglas Sjoquist (27AJJ3WTY6)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PROVISIONING_PROFILE = "61BD9747-A664-4924-BAD5-0E7C3585C1CF";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F89C62AB12E9364100563E7B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = IVGCoreDataUtilsLib;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F89C62AC12E9364100563E7B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				PRODUCT_NAME = IVGCoreDataUtilsLib;
+				SDKROOT = iphoneos;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "IVGCoreDataUtils" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F89C62B612E9365C00563E7B /* Build configuration list for PBXNativeTarget "IVGCoreDataUtilsLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F89C62AB12E9364100563E7B /* Debug */,
+				F89C62AC12E9364100563E7B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
