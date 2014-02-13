@@ -4,9 +4,12 @@ build/*
 *.mode1v3
 *.pbxuser
 *.perspectivev3
-*.xcworkspace
 xcuserdata
+xcshareddata
 
 # osx noise
 .DS_Store
 profile
+
+# cocoapods
+Pods

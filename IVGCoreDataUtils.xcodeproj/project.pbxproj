@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7710EA5EFA9740489F23B048 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F2EE51386BC04547BEA6528F /* libPods.a */; };
 		F841D43F14CB208D000511FE /* NSManagedObjectContext+IVGUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = F841D43B14CB208D000511FE /* NSManagedObjectContext+IVGUtils.h */; };
 		F841D44014CB208D000511FE /* NSManagedObjectContext+IVGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F841D43C14CB208D000511FE /* NSManagedObjectContext+IVGUtils.m */; };
 		F89C641212E93A2A00563E7B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
@@ -19,6 +20,8 @@
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		9F53C4563B7540EF85A4CDE1 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		F2EE51386BC04547BEA6528F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F841D43B14CB208D000511FE /* NSManagedObjectContext+IVGUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+IVGUtils.h"; sourceTree = "<group>"; };
 		F841D43C14CB208D000511FE /* NSManagedObjectContext+IVGUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+IVGUtils.m"; sourceTree = "<group>"; };
 		F857ED3416C09477008851A2 /* IVGCoreDataUtils.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = IVGCoreDataUtils.podspec; sourceTree = "<group>"; };
@@ -40,6 +43,7 @@
 				F89C641212E93A2A00563E7B /* UIKit.framework in Frameworks */,
 				F89C641312E93A2F00563E7B /* Foundation.framework in Frameworks */,
 				F89C641412E93A3400563E7B /* CoreGraphics.framework in Frameworks */,
+				7710EA5EFA9740489F23B048 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +67,7 @@
 				F8E05FF512E681E1008C09E5 /* Libraries */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
+				9F53C4563B7540EF85A4CDE1 /* Pods.xcconfig */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -74,6 +79,7 @@
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				F8B3658A1335518F00878CB2 /* CoreData.framework */,
 				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
+				F2EE51386BC04547BEA6528F /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -134,9 +140,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F89C62B612E9365C00563E7B /* Build configuration list for PBXNativeTarget "IVGCoreDataUtilsLib" */;
 			buildPhases = (
+				516ACBEC1490492F8BC4D54E /* Check Pods Manifest.lock */,
 				F89C62A612E9364100563E7B /* Headers */,
 				F89C62A712E9364100563E7B /* Sources */,
 				F89C62A812E9364100563E7B /* Frameworks */,
+				4197EBACF73349CDA0FDE6B8 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -175,6 +183,39 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4197EBACF73349CDA0FDE6B8 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		516ACBEC1490492F8BC4D54E /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F89C62A712E9364100563E7B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -190,10 +231,6 @@
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					arm6,
-					"$(ARCHS_STANDARD_32_BIT)",
-				);
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Douglas Sjoquist (27AJJ3WTY6)";
 				GCC_C_LANGUAGE_STANDARD = c99;
@@ -210,10 +247,6 @@
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					arm6,
-					"$(ARCHS_STANDARD_32_BIT)",
-				);
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Douglas Sjoquist (27AJJ3WTY6)";
 				GCC_C_LANGUAGE_STANDARD = c99;
@@ -228,12 +261,12 @@
 		};
 		F89C62AB12E9364100563E7B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F53C4563B7540EF85A4CDE1 /* Pods.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = IVGCoreDataUtilsLib;
 				SDKROOT = iphoneos;
 			};
@@ -241,6 +274,7 @@
 		};
 		F89C62AC12E9364100563E7B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F53C4563B7540EF85A4CDE1 /* Pods.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;

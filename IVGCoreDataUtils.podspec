@@ -10,4 +10,5 @@ Pod::Spec.new do |s|
   s.source_files = 'LibClasses/*{.h,.m}'
   s.frameworks   = 'Foundation','UIKit','CoreData','CoreGraphics','CoreData'
   s.requires_arc = true
+  s.dependency 'IVGUtils'
 end
