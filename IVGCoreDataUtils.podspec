@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "IVGCoreDataUtils"
-  s.version      = "1.0.0"
+  s.version      = "1.0.1"
   s.summary      = "Miscellaneous core data helper routines for iOS"
   s.homepage     = "https://github.com/ivygulch/IVGCoreDataUtils"
   s.license      = { :type => 'MIT', :file => 'LICENSE'}

@@ -81,10 +81,18 @@
 
 - (NSArray *)fetchObjectsForEntityName:(NSString *)entityName
                          withPredicate:(id)stringOrPredicate
+                            properties:(NSArray *) properties
+                       sortDescriptors:(NSArray *) sortDescriptors
                                  error:(NSError **) error;
 {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:entityName];
-    
+    if (sortDescriptors) {
+        [request setSortDescriptors:sortDescriptors];
+    }
+    if (properties) {
+        [request setPropertiesToFetch:properties];
+    }
+
     if (stringOrPredicate) {
         NSPredicate *predicate;
         if ([stringOrPredicate isKindOfClass:[NSString class]]) {

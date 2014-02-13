@@ -18,6 +18,8 @@
 - (id)insertNewEntityWithName:(NSString *)name;
 - (NSArray *)fetchObjectsForEntityName:(NSString *)entityName
                          withPredicate:(id)stringOrPredicate
+                            properties:(NSArray *) properties
+                       sortDescriptors:(NSArray *) sortDescriptors
                                  error:(NSError **) error;
 - (id)fetchObjectForEntityName:(NSString *)entityName
                  withPredicate:(id)stringOrPredicate
