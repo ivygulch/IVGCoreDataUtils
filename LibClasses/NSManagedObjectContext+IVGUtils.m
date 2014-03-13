@@ -113,7 +113,7 @@
                  withPredicate:(id)stringOrPredicate
                          error:(NSError **) error;
 {
-    NSArray *results = [self fetchObjectsForEntityName:entityName withPredicate:stringOrPredicate error:error];
+    NSArray *results = [self fetchObjectsForEntityName:entityName withPredicate:stringOrPredicate properties:nil sortDescriptors:nil error:error];
     if ([results count] > 1) {
         NSLog(@"Expected one or zero records fetching from '%@' withPredicate: %@, found:\n%@", entityName, stringOrPredicate, results);
     }
