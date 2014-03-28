@@ -43,13 +43,19 @@
     }
 }
 
+#define IFNSNULL(v) ([v isEqual:[NSNull null]] ? nil : v)
+
 - (void)observeValueForKeyPath:(NSString *)keyPath
                       ofObject:(id)object change:(NSDictionary *)change
                        context:(void *)context;
 {
     IVGMOObserverBlock block = [[self keyPathObserverBlocks] objectForKey:keyPath];
     if (block) {
-        block(self, keyPath, [change objectForKey:NSKeyValueChangeOldKey], [change objectForKey:NSKeyValueChangeNewKey]);
+        block(self,
+              keyPath,
+              IFNSNULL([change objectForKey:NSKeyValueChangeOldKey]),
+              IFNSNULL([change objectForKey:NSKeyValueChangeNewKey])
+              );
     } else {
         [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
     }
