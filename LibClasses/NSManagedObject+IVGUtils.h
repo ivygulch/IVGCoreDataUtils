@@ -8,11 +8,12 @@
 
 #import <CoreData/CoreData.h>
 
-typedef void(^IVGMOObserverBlock)(id previousValue, id newValue);
+typedef void(^IVGMOObserverBlock)(id managedObject, NSString *keyPath, id oldValue, id newValue);
 
 @interface NSManagedObject (IVGUtils)
 
 - (void) addObserverBlock:(IVGMOObserverBlock) block forKeyPath:(NSString *)keyPath;
 - (void) removeObserverBlockForKeyPath:(NSString *)keyPath;
+- (void) removeObserverBlocksForAllKeyPaths;
 
 @end

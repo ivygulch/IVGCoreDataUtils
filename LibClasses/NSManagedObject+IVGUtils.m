@@ -11,24 +11,49 @@
 
 @implementation NSManagedObject (IVGUtils)
 
-- (NSMutableDictionary *) propertyObserverBlocks;
+- (NSMutableDictionary *) keyPathObserverBlocks;
 {
-    NSMutableDictionary *result = [self associatedUserInfoObjectForKey:@"IVGUtils_propertyObserverBlocks"];
+    NSMutableDictionary *result = [self associatedUserInfoObjectForKey:@"IVGUtils_keyPathObserverBlocks"];
     if (result == nil) {
         result = [NSMutableDictionary dictionary];
-        [self setAssociatedUserInfoObject:result forKey:@"IVGUtils_propertyObserverBlocks"];
+        [self setAssociatedUserInfoObject:result forKey:@"IVGUtils_keyPathObserverBlocks"];
     }
     return result;
 }
 
 - (void) addObserverBlock:(IVGMOObserverBlock) block forKeyPath:(NSString *)keyPath;
 {
-    [[self propertyObserverBlocks] setObject:block forKey:keyPath];
+    [[self keyPathObserverBlocks] setObject:block forKey:keyPath];
+    [self addObserver:self forKeyPath:keyPath
+              options:(NSKeyValueObservingOptionOld | NSKeyValueObservingOptionNew)
+              context:NULL];
 }
 
 - (void) removeObserverBlockForKeyPath:(NSString *)keyPath;
 {
-    [[self propertyObserverBlocks] removeObjectForKey:keyPath];
+    [self removeObserver:self forKeyPath:keyPath];
+    [[self keyPathObserverBlocks] removeObjectForKey:keyPath];
 }
+
+- (void) removeObserverBlocksForAllKeyPaths;
+{
+    NSArray *keyPaths = [[[self keyPathObserverBlocks] allKeys] copy];
+    for (NSString *keyPath in keyPaths) {
+        [self removeObserverBlockForKeyPath:keyPath];
+    }
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)object change:(NSDictionary *)change
+                       context:(void *)context;
+{
+    IVGMOObserverBlock block = [[self keyPathObserverBlocks] objectForKey:keyPath];
+    if (block) {
+        block(self, keyPath, [change objectForKey:NSKeyValueChangeOldKey], [change objectForKey:NSKeyValueChangeNewKey]);
+    } else {
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+    }
+}
+
 
 @end
