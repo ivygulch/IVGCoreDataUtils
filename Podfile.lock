@@ -1,10 +1,10 @@
 PODS:
-  - IVGUtils (1.0.0)
+  - IVGUtils (1.0.7)
 
 DEPENDENCIES:
   - IVGUtils
 
 SPEC CHECKSUMS:
-  IVGUtils: feda4a9928de76c085545a5adecded8cb4657b75
+  IVGUtils: 5ea2aa25c3da50c4f4e5c1de88d78acbadd43956
 
-COCOAPODS: 0.29.0
+COCOAPODS: 0.39.0
