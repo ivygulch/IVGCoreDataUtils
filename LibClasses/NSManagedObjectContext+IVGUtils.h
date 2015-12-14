@@ -6,14 +6,9 @@
 //  Copyright 2011 Ivy Gulch, LLC. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
 @interface NSManagedObjectContext (IVGUtils)
-
-- (NSManagedObjectContext *) createChildContext;
-- (BOOL) saveContextRecursively:(BOOL) recursively error:(NSError **) error;
-- (BOOL) saveContextRecursively:(BOOL) recursively modifiedPropertyName:(NSString *) modifiedProperty error:(NSError **) error;
 
 - (id)insertNewEntityWithName:(NSString *)name;
 - (NSArray *)fetchObjectsForEntityName:(NSString *)entityName
@@ -25,8 +20,9 @@
                  withPredicate:(id)stringOrPredicate
                          error:(NSError **) error;
 
-+ (NSURL *) writeableDatabaseUrl:(NSString *) databaseName error:(NSError **) errorPointer;
-+ (NSManagedObjectContext *) newManagedObjectContextForDatastore:(NSURL *) storeUrl error:(NSError **) errorPointer;
+- (NSManagedObjectContext *) newChildContext;
+- (void) save;
 
+- (BOOL) isDescendantOf:(NSManagedObjectContext *) potentialAncestor;
 
 @end
