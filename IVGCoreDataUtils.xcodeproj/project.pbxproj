@@ -10,6 +10,8 @@
 		7710EA5EFA9740489F23B048 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F2EE51386BC04547BEA6528F /* libPods.a */; };
 		F8186F8218E5EAF50093F2A3 /* NSManagedObject+IVGUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = F8186F8018E5EAF50093F2A3 /* NSManagedObject+IVGUtils.h */; };
 		F8186F8318E5EAF50093F2A3 /* NSManagedObject+IVGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F8186F8118E5EAF50093F2A3 /* NSManagedObject+IVGUtils.m */; };
+		F82A05841C1F0E3A005FAD06 /* IVGContextManager.h in Headers */ = {isa = PBXBuildFile; fileRef = F82A05821C1F0E3A005FAD06 /* IVGContextManager.h */; };
+		F82A05851C1F0E3A005FAD06 /* IVGContextManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F82A05831C1F0E3A005FAD06 /* IVGContextManager.m */; };
 		F841D43F14CB208D000511FE /* NSManagedObjectContext+IVGUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = F841D43B14CB208D000511FE /* NSManagedObjectContext+IVGUtils.h */; };
 		F841D44014CB208D000511FE /* NSManagedObjectContext+IVGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F841D43C14CB208D000511FE /* NSManagedObjectContext+IVGUtils.m */; };
 		F89C641212E93A2A00563E7B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
@@ -27,6 +29,8 @@
 		F2EE51386BC04547BEA6528F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8186F8018E5EAF50093F2A3 /* NSManagedObject+IVGUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+IVGUtils.h"; sourceTree = "<group>"; };
 		F8186F8118E5EAF50093F2A3 /* NSManagedObject+IVGUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+IVGUtils.m"; sourceTree = "<group>"; };
+		F82A05821C1F0E3A005FAD06 /* IVGContextManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IVGContextManager.h; sourceTree = "<group>"; };
+		F82A05831C1F0E3A005FAD06 /* IVGContextManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IVGContextManager.m; sourceTree = "<group>"; };
 		F841D43B14CB208D000511FE /* NSManagedObjectContext+IVGUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+IVGUtils.h"; sourceTree = "<group>"; };
 		F841D43C14CB208D000511FE /* NSManagedObjectContext+IVGUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+IVGUtils.m"; sourceTree = "<group>"; };
 		F857ED3416C09477008851A2 /* IVGCoreDataUtils.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = IVGCoreDataUtils.podspec; sourceTree = "<group>"; };
@@ -111,6 +115,8 @@
 		F89C62A312E935C300563E7B /* LibClasses */ = {
 			isa = PBXGroup;
 			children = (
+				F82A05821C1F0E3A005FAD06 /* IVGContextManager.h */,
+				F82A05831C1F0E3A005FAD06 /* IVGContextManager.m */,
 				F841D43B14CB208D000511FE /* NSManagedObjectContext+IVGUtils.h */,
 				F841D43C14CB208D000511FE /* NSManagedObjectContext+IVGUtils.m */,
 				F8186F8018E5EAF50093F2A3 /* NSManagedObject+IVGUtils.h */,
@@ -147,6 +153,7 @@
 			files = (
 				F841D43F14CB208D000511FE /* NSManagedObjectContext+IVGUtils.h in Headers */,
 				F8186F8218E5EAF50093F2A3 /* NSManagedObject+IVGUtils.h in Headers */,
+				F82A05841C1F0E3A005FAD06 /* IVGContextManager.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +247,7 @@
 			files = (
 				F8186F8318E5EAF50093F2A3 /* NSManagedObject+IVGUtils.m in Sources */,
 				F841D44014CB208D000511FE /* NSManagedObjectContext+IVGUtils.m in Sources */,
+				F82A05851C1F0E3A005FAD06 /* IVGContextManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

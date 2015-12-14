@@ -119,8 +119,8 @@
                               NSInferMappingModelAutomaticallyOption:@(YES),
                               NSSQLitePragmasOption:@{@"journal_mode":@"DELETE"}};
     NSError *error = nil;
-    BOOL success = [self.privateContext.persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:options error:&error];
-    NSAssert(success, @"Could not create persistent store: %@", [error localizedDescription]);
+    NSPersistentStore *persistentStore = [self.privateContext.persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:options error:&error];
+    NSAssert(persistentStore, @"Could not create persistent store: %@", [error localizedDescription]);
 }
 
 #pragma mark - notification handling
