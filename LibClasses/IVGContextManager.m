@@ -48,19 +48,6 @@
     }];
 }
 
-- (void) setAutosaveEnabled:(BOOL)autosaveEnabled;
-{
-    // ensure we only add or remove observers when appropriate
-    if (_autosaveEnabled != autosaveEnabled) {
-        _autosaveEnabled = autosaveEnabled;
-        if (autosaveEnabled) {
-            [self addObservers];
-        } else {
-            [self removeObservers];
-        }
-    }
-}
-
 #pragma mark - private initialization methods
 
 - (void) initializeWithCallback:(IVGPersistenceInitializationCallback) callback;
@@ -121,50 +108,6 @@
     NSError *error = nil;
     NSPersistentStore *persistentStore = [self.privateContext.persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:options error:&error];
     NSAssert(persistentStore, @"Could not create persistent store: %@", [error localizedDescription]);
-}
-
-#pragma mark - notification handling
-
-- (void) addObservers;
-{
-    [[NSNotificationCenter defaultCenter]
-     addObserver:self
-     selector:@selector(handleManagedObjectContextDidSaveNotification:)
-     name:NSManagedObjectContextDidSaveNotification
-     object:nil];
-}
-
-- (void) removeObservers;
-{
-    [[NSNotificationCenter defaultCenter]
-     removeObserver:self
-     name:NSManagedObjectContextDidSaveNotification
-     object:nil];
-}
-
-- (void) handleManagedObjectContextDidSaveNotification:(NSNotification *) notification;
-{
-    NSManagedObjectContext *context = [notification object];
-    if (self.autosaveEnabled && [context isDescendantOf:self.managedObjectContext]) {
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
-            [self saveContextAncestors:context];
-        });
-    }
-}
-
-- (void) saveContextAncestors:(NSManagedObjectContext *) context;
-{
-    // start saving at parent until we reach self.managedObjectContext,
-    // then call special contextManager save methoed
-    context = context.parentContext;
-    while ((context != nil) && (context != self.managedObjectContext)) {
-        [context save];
-        context = context.parentContext;
-    }
-    // if we reached self.managedObjectContext, call special save method
-    if (context == self.managedObjectContext) {
-        [self save];
-    }
 }
 
 @end

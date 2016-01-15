@@ -14,7 +14,6 @@ typedef void (^IVGPersistenceInitializationCallback)(void);
 
 @property (nonatomic,copy,readonly) NSString *modelName;
 @property (nonatomic,strong,readonly) NSManagedObjectContext *managedObjectContext;
-@property (nonatomic,assign) BOOL autosaveEnabled;
 
 - (instancetype) initWithModelName:(NSString *) modelName
                           callback:(IVGPersistenceInitializationCallback) callback;
